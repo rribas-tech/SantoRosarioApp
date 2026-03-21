@@ -1,10 +1,11 @@
 import SwiftUI
 
 @main
-struct rosarioApp: App {
+struct RosarioApp: App {
     var body: some Scene {
         WindowGroup {
             RosaryView()
+                .preferredColorScheme(.dark)
         }
     }
 }
