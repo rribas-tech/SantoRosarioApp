@@ -20,23 +20,17 @@ struct Bead: Identifiable {
             id += 1
         }
 
-        // Pendente (bottom to top): crucifixo, Pai Nosso, 3 Ave Marias, 1º Mistério, medalha
-        add(.crucifix)  // 0
-        add(.large)     // 1 - Pai Nosso
-        add(.small)     // 2 - Ave Maria
-        add(.small)     // 3 - Ave Maria
-        add(.small)     // 4 - Ave Maria
-        add(.large)     // 5 - 1º Mistério
-        add(.medal)     // 6
+        add(.crucifix)
+        add(.large)
+        add(.small)
+        add(.small)
+        add(.small)
+        add(.large)
+        add(.medal)
 
-        // Loop: 4 dezenas com mistério + 1 dezena final (volta à medalha)
         for decade in 1...5 {
-            for _ in 1...10 {
-                add(.small)
-            }
-            if decade < 5 {
-                add(.large) // mistérios 2, 3, 4, 5
-            }
+            for _ in 1...10 { add(.small) }
+            if decade < 5 { add(.large) }
         }
 
         return beads
