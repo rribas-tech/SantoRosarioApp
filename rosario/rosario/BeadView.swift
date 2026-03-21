@@ -8,8 +8,8 @@ struct BeadView: View {
     private var size: CGFloat {
         switch kind {
         case .small: 14
-        case .large: 20
-        case .medal: 22
+        case .large: 22
+        case .medal: 24
         case .crucifix: 0 // handled by CrucifixView
         }
     }

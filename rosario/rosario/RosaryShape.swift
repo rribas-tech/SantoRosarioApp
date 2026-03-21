@@ -8,82 +8,84 @@ struct RosaryGeometry {
 }
 
 enum RosaryShape {
+    // Pendant has 7 elements: crucifix(0), large(1), small(2,3,4), large/1st mystery(5), medal(6)
+    static let pendantCount = 7
+
     static func layout(beads: [Bead], in size: CGSize) -> RosaryGeometry {
-        let loopBeadCount = beads.count - 6 // 55 beads in the loop
+        let loopCount = beads.count - Self.pendantCount
 
-        // Ellipse parameters — centered horizontally, upper portion of screen
-        let centerX = size.width / 2
-        let ellipseRx = min(size.width * 0.38, 160.0)
-        let ellipseRy = min(size.height * 0.28, 200.0)
-        let ellipseCenterY = size.height * 0.38
+        let cx = Double(size.width / 2)
+        let radius = Double(min(size.width * 0.42, size.height * 0.30))
+        let cy = Double(size.height) * 0.38
 
-        // Medal at bottom of ellipse
-        let medalPoint = CGPoint(x: centerX, y: ellipseCenterY + ellipseRy)
-
-        // Pendant: medal → 3 small → 1 large → crucifix (going downward)
-        let pendantSpacing: CGFloat = 28
-        let pendantTop = medalPoint.y + pendantSpacing
-
-        // pendant order in beads array: [crucifix(0), large(1), small(2), small(3), small(4), medal(5)]
-        // visual order top-to-bottom: medal(5), small(4), small(3), small(2), large(1), crucifix(0)
         var positions = Array(repeating: CGPoint.zero, count: beads.count)
 
-        // Medal position (id=5)
-        positions[5] = medalPoint
+        // Medal at bottom of circle
+        let medalY = cy + radius
+        positions[6] = CGPoint(x: cx, y: medalY)
 
-        // Pendant beads going down from medal
-        let pendantOrder = [4, 3, 2, 1, 0] // small, small, small, large, crucifix
-        for (i, beadID) in pendantOrder.enumerated() {
-            positions[beadID] = CGPoint(
-                x: centerX,
-                y: pendantTop + CGFloat(i) * pendantSpacing
-            )
-        }
-
+        // Pendant top-to-bottom: medal(6) → 1st mystery(5) → small(4,3,2) → large/Pai Nosso(1) → crucifix(0)
+        let smallGap: Double = 26
+        let largeGap: Double = 36
+        var py = medalY
+        py += largeGap;  positions[5] = CGPoint(x: cx, y: py) // 1st mystery
+        py += smallGap;  positions[4] = CGPoint(x: cx, y: py) // Ave Maria
+        py += smallGap;  positions[3] = CGPoint(x: cx, y: py) // Ave Maria
+        py += smallGap;  positions[2] = CGPoint(x: cx, y: py) // Ave Maria
+        py += largeGap;  positions[1] = CGPoint(x: cx, y: py) // Pai Nosso
+        py += largeGap;  positions[0] = CGPoint(x: cx, y: py) // Crucifix
         let crucifixCenter = positions[0]
 
-        // Loop beads (id 6..60) distributed along ellipse
-        // Start from just right of bottom (medal), go clockwise
-        // Angle 0 = right, π/2 = bottom, π = left, 3π/2 = top
-        // Medal is at π/2 (bottom). We start just after and end just before.
-        let startAngle = Double.pi / 2
-        let totalAngle = 2.0 * Double.pi
-        let step = totalAngle / Double(loopBeadCount + 1) // +1 for gap at medal
+        // Loop: 54 beads (10s, M, 10s, M, 10s, M, 10s, M, 10s)
+        // Mystery beads get extra angular space
+        let mysteryWeight = 2.5
+        let smallWeight = 1.0
+        let totalWeight = 4.0 * mysteryWeight + 50.0 * smallWeight
+        let gapWeight = 1.5
+        let fullWeight = totalWeight + gapWeight
 
-        for i in 0..<loopBeadCount {
-            let beadID = 6 + i
-            // Go clockwise: subtract angle (SwiftUI y-axis is inverted)
-            let angle = startAngle - Double(i + 1) * step
-            let x = centerX + ellipseRx * cos(angle)
-            let y = ellipseCenterY - ellipseRy * sin(angle)
-            positions[beadID] = CGPoint(x: x, y: y)
+        let anglePerUnit = 2.0 * Double.pi / fullWeight
+        var angle = Double.pi / 2 + gapWeight / 2.0 * anglePerUnit
+
+        for i in 0..<loopCount {
+            let bead = beads[Self.pendantCount + i]
+            let weight = bead.kind == .large ? mysteryWeight : smallWeight
+            angle += weight / 2.0 * anglePerUnit
+
+            positions[Self.pendantCount + i] = CGPoint(
+                x: cx + radius * cos(angle),
+                y: cy + radius * sin(angle)
+            )
+
+            angle += weight / 2.0 * anglePerUnit
         }
 
         // Chain segments
         var chains: [(CGPoint, CGPoint)] = []
 
-        // Pendant chain: medal → small4 → small3 → small2 → large1 → crucifix
-        let pendantChainOrder = [5, 4, 3, 2, 1, 0]
-        for i in 0..<(pendantChainOrder.count - 1) {
-            chains.append((positions[pendantChainOrder[i]], positions[pendantChainOrder[i + 1]]))
+        // Pendant chain: medal(6) → mystery(5) → small(4) → small(3) → small(2) → large(1) → crucifix(0)
+        let pendantOrder = [6, 5, 4, 3, 2, 1, 0]
+        for i in 0..<(pendantOrder.count - 1) {
+            chains.append((positions[pendantOrder[i]], positions[pendantOrder[i + 1]]))
         }
 
         // Medal to first loop bead
-        chains.append((positions[5], positions[6]))
+        let firstLoop = Self.pendantCount
+        chains.append((positions[6], positions[firstLoop]))
 
-        // Loop chain: consecutive beads
-        for i in 6..<(beads.count - 1) {
+        // Loop consecutive
+        for i in firstLoop..<(beads.count - 1) {
             chains.append((positions[i], positions[i + 1]))
         }
 
-        // Last loop bead back to medal
-        chains.append((positions[beads.count - 1], positions[5]))
+        // Last to medal
+        chains.append((positions[beads.count - 1], positions[6]))
 
         return RosaryGeometry(
             beadPositions: positions,
             chainSegments: chains,
             crucifixCenter: crucifixCenter,
-            medalCenter: medalPoint
+            medalCenter: positions[6]
         )
     }
 }
