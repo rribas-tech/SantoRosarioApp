@@ -11,6 +11,8 @@ struct Bead: Identifiable {
     let id: Int
     let kind: BeadKind
 
+    static let rosary = makeRosary()
+
     static func makeRosary() -> [Bead] {
         var beads: [Bead] = []
         var id = 0

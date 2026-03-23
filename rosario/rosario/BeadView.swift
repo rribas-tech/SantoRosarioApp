@@ -3,15 +3,35 @@ import SwiftUI
 struct BeadView: View {
     let kind: BeadKind
     let isSelected: Bool
+    var sizeScale: CGFloat = 1.0
+    var minimumHitWidth: CGFloat? = nil
+    var minimumHitHeight: CGFloat? = nil
+    var selectionScale: CGFloat = 1.3
     let onTap: () -> Void
 
     private var size: CGFloat {
         switch kind {
-        case .small: 14
-        case .large: 22
-        case .medal: 24
+        case .small: 14 * sizeScale
+        case .large: 22 * sizeScale
+        case .medal: 24 * sizeScale
         case .crucifix: 0
         }
+    }
+
+    private var renderedWidth: CGFloat {
+        size
+    }
+
+    private var renderedHeight: CGFloat {
+        kind == .medal ? size * 1.25 : size
+    }
+
+    private var frameWidth: CGFloat {
+        max(renderedWidth, minimumHitWidth ?? 0)
+    }
+
+    private var frameHeight: CGFloat {
+        max(renderedHeight, minimumHitHeight ?? 0)
     }
 
     private static let gold = Color(red: 1, green: 0.84, blue: 0)
@@ -20,8 +40,10 @@ struct BeadView: View {
         Group {
             if kind == .medal { medal } else { bead }
         }
+        .frame(width: frameWidth, height: frameHeight)
+        .contentShape(Rectangle())
         .shadow(color: Self.gold.opacity(isSelected ? 0.9 : 0), radius: isSelected ? 12 : 0)
-        .scaleEffect(isSelected ? 1.3 : 1.0)
+        .scaleEffect(isSelected ? selectionScale : 1.0)
         .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isSelected)
         .onTapGesture(perform: onTap)
     }
