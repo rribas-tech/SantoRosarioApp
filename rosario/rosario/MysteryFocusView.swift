@@ -5,6 +5,7 @@ struct MysteryFocusView: View {
 
     @State private var activeSection: RosaryFocusSection
     @State private var selectedStep: FocusStep
+    @State private var isPrayerExpanded = false
 
     init(context: RosaryFocusContext) {
         self.context = context
@@ -41,9 +42,21 @@ struct MysteryFocusView: View {
         currentSteps.firstIndex(of: selectedStep) ?? 0
     }
 
+    private var currentFocusPrayer: FocusPrayer? {
+        let p = prayer(for: selectedStep, in: activeSection)
+        return p == .announceMystery ? nil : p
+    }
+
+    private var expandedPrayerText: String? {
+        guard let prayer = currentFocusPrayer, let base = prayer.fullText else { return nil }
+        if prayer == .gloryBe, case .mystery = activeSection {
+            return base + "\n\nÓh! Meu Jesus, perdoai-nos, livrai-nos do fogo do inferno, levai as almas todas para o Céu e socorrei principalmente as que mais precisarem."
+        }
+        return base
+    }
+
     private var currentPrayerLabel: String? {
-        let currentPrayer = prayer(for: selectedStep, in: activeSection)
-        guard currentPrayer != .announceMystery else { return nil }
+        guard let currentPrayer = currentFocusPrayer else { return nil }
 
         if case .introduction = activeSection, case .bead(let id) = selectedStep {
             switch id {
@@ -52,6 +65,10 @@ struct MysteryFocusView: View {
             case 4: return "Ave Maria, Esposa Fidelíssima do Divino Espírito Santo"
             default: break
             }
+        }
+
+        if currentPrayer == .gloryBe, case .mystery = activeSection {
+            return "Glória ao Pai e Jaculatória de Fátima"
         }
 
         return currentPrayer.rawValue
@@ -170,11 +187,38 @@ struct MysteryFocusView: View {
     private var mysteryStrip: some View {
         VStack(alignment: .leading, spacing: currentPrayerLabel == nil ? 0 : 14) {
             if let currentPrayerLabel {
-                Text(currentPrayerLabel)
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(isClosingChainSelected ? gold : .white.opacity(0.92))
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity, alignment: .center)
+                VStack(spacing: 0) {
+                    Button {
+                        withAnimation(.spring(response: 0.35, dampingFraction: 0.82)) {
+                            isPrayerExpanded.toggle()
+                        }
+                    } label: {
+                        HStack(spacing: 6) {
+                            Spacer()
+                            Text(currentPrayerLabel)
+                                .font(.headline.weight(.semibold))
+                                .foregroundStyle(isClosingChainSelected ? gold : .white.opacity(0.92))
+                                .multilineTextAlignment(.center)
+                            Image(systemName: "chevron.up")
+                                .font(.caption2.weight(.bold))
+                                .foregroundStyle(.white.opacity(0.45))
+                                .rotationEffect(.degrees(isPrayerExpanded ? 180 : 0))
+                            Spacer()
+                        }
+                    }
+                    .buttonStyle(.plain)
+
+                    if isPrayerExpanded, let fullText = expandedPrayerText {
+                        Text(fullText)
+                            .font(.system(size: 16, weight: .regular, design: .serif))
+                            .foregroundStyle(.white.opacity(0.85))
+                            .lineSpacing(6)
+                            .multilineTextAlignment(.center)
+                            .frame(maxWidth: .infinity)
+                            .padding(.top, 14)
+                            .transition(.opacity.combined(with: .move(edge: .bottom)))
+                    }
+                }
             }
 
             GeometryReader { proxy in
@@ -313,6 +357,7 @@ struct MysteryFocusView: View {
 
         if currentSteps.indices.contains(targetIndex) {
             withAnimation(.spring(response: 0.28, dampingFraction: 0.8)) {
+                isPrayerExpanded = false
                 selectedStep = currentSteps[targetIndex]
             }
             return
@@ -327,6 +372,7 @@ struct MysteryFocusView: View {
         let targetSteps = steps(for: targetSection)
 
         withAnimation(.spring(response: 0.32, dampingFraction: 0.82)) {
+            isPrayerExpanded = false
             activeSection = targetSection
             selectedStep = offset > 0
                 ? (targetSteps.first ?? .bead(targetSection.defaultBeadID))
@@ -419,6 +465,7 @@ struct MysteryFocusView: View {
                 selectionScale: 1.08
             ) {
                 withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                    isPrayerExpanded = false
                     selectedStep = .bead(bead.id)
                 }
             }
@@ -432,6 +479,7 @@ struct MysteryFocusView: View {
                 selectionScale: 1.12
             ) {
                 withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                    isPrayerExpanded = false
                     selectedStep = .bead(bead.id)
                 }
             }
@@ -473,6 +521,23 @@ struct MysteryFocusView: View {
         case ourFather = "Pai Nosso"
         case hailMary = "Ave Maria"
         case gloryBe = "Glória ao Pai"
+
+        var fullText: String? {
+            switch self {
+            case .hailMary:
+                "Ave Maria, cheia de graça, o Senhor é convosco. Bendita sois Vós entre as mulheres, bendito é o fruto de Vosso ventre, Jesus.\nSanta Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
+            case .ourFather:
+                "Pai Nosso, que estais no céu, santificado seja o Vosso Nome, venha a nós o Vosso Reino, seja feita a Vossa Vontade, assim na terra como no céu.\nO pão nosso de cada dia nos dai hoje, perdoai-nos as nossas ofensas, assim como nós perdoamos a quem nos tenha ofendido. E não nos deixeis cair em tentação, mas livrai-nos do mal. Amém."
+            case .gloryBe:
+                "Glória ao Pai, ao Filho e ao Espírito Santo, como era no princípio, agora e sempre. Amém."
+            case .creed:
+                "Creio em Deus Pai todo-poderoso, Criador do céu e da terra; e em Jesus Cristo, seu único Filho, nosso Senhor; que foi concebido pelo poder do Espírito Santo; nasceu da Virgem Maria; padeceu sob Pôncio Pilatos, foi crucificado, morto e sepultado; desceu à mansão dos mortos; ressuscitou ao terceiro dia; subiu aos céus, está sentado à direita de Deus Pai todo-poderoso, de onde há de vir a julgar os vivos e os mortos.\nCreio no Espírito Santo, na Santa Igreja Católica, na comunhão dos santos, na remissão dos pecados, na ressurreição da carne, na vida eterna. Amém."
+            case .salveRainha:
+                "Salve Rainha, Mãe de Misericórdia, vida, doçura e esperança nossa, salve! A Vós bradamos, os degredados filhos de Eva. A Vós suspiramos, gemendo e chorando neste vale de lágrimas.\nEia, pois, Advogada nossa, esses Vossos olhos misericordiosos a nós volvei, e, depois deste desterro, mostrai-nos a Jesus, bendito fruto de Vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria.\nRogai por nós, santa Mãe de Deus,\nPara que sejamos dignos das promessas de Cristo.\nAmém."
+            case .announceMystery:
+                nil
+            }
+        }
     }
 
     private struct StripMetrics {

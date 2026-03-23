@@ -272,7 +272,7 @@ enum RosaryFocusSection: Hashable {
             return FocusContent(
                 eyebrow: "Início do Rosário",
                 title: "Orações iniciais",
-                heroText: "Em nome do Pai, do Filho e do Espírito Santo.\n\n«Ó Deus, vinde em nosso auxílio; Senhor, socorrei-nos e salvai-nos» (Sl 69/70, 2).\n\nGlória ao Pai, ao Filho e ao Espírito Santo.\nComo era no princípio, agora e sempre,\nAmém."
+                heroText: "«Ó Deus, vinde em nosso auxílio; Senhor, socorrei-nos e salvai-nos» (Sl 69/70, 2)."
             )
         case .mystery(let index):
             let mystery = mysterySet.mysteries[index]
