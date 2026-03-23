@@ -1,5 +1,48 @@
 import Foundation
 
+struct Prayer: Hashable {
+    let name: String
+    let body: String
+}
+
+enum Prayers {
+    static let creed = Prayer(
+        name: "Creio em Deus Pai",
+        body: "Creio em Deus Pai todo-poderoso, Criador do céu e da terra; e em Jesus Cristo, seu único Filho, nosso Senhor; que foi concebido pelo poder do Espírito Santo; nasceu da Virgem Maria; padeceu sob Pôncio Pilatos, foi crucificado, morto e sepultado; desceu à mansão dos mortos; ressuscitou ao terceiro dia; subiu aos céus, está sentado à direita de Deus Pai todo-poderoso, de onde há de vir a julgar os vivos e os mortos.\n\nCreio no Espírito Santo, na Santa Igreja Católica, na comunhão dos santos, na remissão dos pecados, na ressurreição da carne, na vida eterna. Amém."
+    )
+
+    static let ourFather = Prayer(
+        name: "Pai Nosso",
+        body: "Pai Nosso, que estais no céu, santificado seja o Vosso Nome, venha a nós o Vosso Reino, seja feita a Vossa Vontade, assim na terra como no céu.\n\nO pão nosso de cada dia nos dai hoje, perdoai-nos as nossas ofensas, assim como nós perdoamos a quem nos tenha ofendido. E não nos deixeis cair em tentação, mas livrai-nos do mal. Amém."
+    )
+
+    static let hailMary = Prayer(
+        name: "Ave Maria",
+        body: "Ave Maria, cheia de graça, o Senhor é convosco. Bendita sois Vós entre as mulheres, bendito é o fruto de Vosso ventre, Jesus.\n\nSanta Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
+    )
+
+    static let gloryBe = Prayer(
+        name: "Glória ao Pai",
+        body: "Glória ao Pai, ao Filho e ao Espírito Santo, como era no princípio, agora e sempre. Amém."
+    )
+
+    static let fatima = Prayer(
+        name: "Jaculatória de Fátima",
+        body: "Óh! Meu Jesus, perdoai-nos, livrai-nos do fogo do inferno, levai as almas todas para o Céu e socorrei principalmente as que mais precisarem."
+    )
+
+    static let salveRainha = Prayer(
+        name: "Salve Rainha",
+        body: "Salve Rainha, Mãe de Misericórdia, vida, doçura e esperança nossa, salve! A Vós bradamos, os degredados filhos de Eva. A Vós suspiramos, gemendo e chorando neste vale de lágrimas.\n\nEia, pois, Advogada nossa, esses Vossos olhos misericordiosos a nós volvei, e, depois deste desterro, mostrai-nos a Jesus, bendito fruto de Vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria.\n\nRogai por nós, santa Mãe de Deus,\nPara que sejamos dignos das promessas de Cristo.\nAmém."
+    )
+
+    static let introHailMaryTitles: [Int: String] = [
+        2: "Ave Maria, Filha Bem Amada do Pai Eterno",
+        3: "Ave Maria, Mãe Admirável de Deus Filho",
+        4: "Ave Maria, Esposa Fidelíssima do Divino Espírito Santo",
+    ]
+}
+
 struct MysteryContent: Identifiable, Hashable {
     let set: MysterySet
     let number: Int
@@ -284,29 +327,14 @@ enum RosaryFocusSection: Hashable {
         case .finale:
             return FocusContent(
                 eyebrow: "Final do Rosário",
-                title: "Salve Rainha",
-                heroText: "Salve Rainha, Mãe de Misericórdia, vida, doçura e esperança nossa, salve! A Vós bradamos, os degredados filhos de Eva. A Vós suspiramos, gemendo e chorando neste vale de lágrimas.\n\nEia, pois, Advogada nossa, esses Vossos olhos misericordiosos a nós volvei, e, depois deste desterro, mostrai-nos a Jesus, bendito fruto de Vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria.\n\nRogai por nós, santa Mãe de Deus,\nPara que sejamos dignos das promessas de Cristo.\nAmém."
+                title: Prayers.salveRainha.name,
+                heroText: Prayers.salveRainha.body
             )
         }
     }
 
     static func from(beadID: Int) -> RosaryFocusSection {
-        switch beadID {
-        case 0...4:
-            .introduction
-        case 6:
-            .finale
-        case 5, 7...16:
-            .mystery(0)
-        case 17...27:
-            .mystery(1)
-        case 28...38:
-            .mystery(2)
-        case 39...49:
-            .mystery(3)
-        default:
-            .mystery(4)
-        }
+        orderedSections.first { $0.beadIDs.contains(beadID) } ?? .mystery(4)
     }
 }
 
