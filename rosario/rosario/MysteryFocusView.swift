@@ -44,6 +44,16 @@ struct MysteryFocusView: View {
     private var currentPrayerLabel: String? {
         let currentPrayer = prayer(for: selectedStep, in: activeSection)
         guard currentPrayer != .announceMystery else { return nil }
+
+        if case .introduction = activeSection, case .bead(let id) = selectedStep {
+            switch id {
+            case 2: return "Ave Maria, Filha Bem Amada do Padre Eterno"
+            case 3: return "Ave Maria, Mãe Admirável de Deus Filho"
+            case 4: return "Ave Maria, Esposa Fidelíssima do Divino Espírito Santo"
+            default: break
+            }
+        }
+
         return currentPrayer.rawValue
     }
 
@@ -163,6 +173,7 @@ struct MysteryFocusView: View {
                 Text(currentPrayerLabel)
                     .font(.headline.weight(.semibold))
                     .foregroundStyle(isClosingChainSelected ? gold : .white.opacity(0.92))
+                    .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity, alignment: .center)
             }
 
@@ -324,13 +335,12 @@ struct MysteryFocusView: View {
     }
 
     private func steps(for section: RosaryFocusSection) -> [FocusStep] {
+        let beadSteps = section.beadIDs.map(FocusStep.bead)
         switch section {
-        case .introduction:
-            section.beadIDs.map(FocusStep.bead) + [.chain(.gloryBe)]
-        case .mystery:
-            section.beadIDs.map(FocusStep.bead) + [.chain(.gloryBe)]
+        case .introduction, .mystery:
+            return beadSteps + [.chain(.gloryBe)]
         case .finale:
-            section.beadIDs.map(FocusStep.bead)
+            return beadSteps
         }
     }
 
@@ -459,7 +469,7 @@ struct MysteryFocusView: View {
     private enum FocusPrayer: String, Hashable {
         case salveRainha = "Salve Rainha"
         case announceMystery = "Anúncio do Mistério"
-        case creed = "Creio"
+        case creed = "Creio em Deus Pai"
         case ourFather = "Pai Nosso"
         case hailMary = "Ave Maria"
         case gloryBe = "Glória ao Pai"

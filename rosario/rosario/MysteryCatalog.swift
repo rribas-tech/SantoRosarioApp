@@ -272,7 +272,7 @@ enum RosaryFocusSection: Hashable {
             return FocusContent(
                 eyebrow: "Início do Rosário",
                 title: "Orações iniciais",
-                heroText: "Em nome do Pai, do Filho e do Espírito Santo.\nÓ Deus, vinde em nosso auxílio.\nSenhor, socorrei-nos e salvai-nos.\nGlória ao Pai, ao Filho e ao Espírito Santo.\nComo era no princípio, agora e sempre,\nAmém."
+                heroText: "Em nome do Pai, do Filho e do Espírito Santo.\n\n«Ó Deus, vinde em nosso auxílio; Senhor, socorrei-nos e salvai-nos» (Sl 69/70, 2).\n\nGlória ao Pai, ao Filho e ao Espírito Santo.\nComo era no princípio, agora e sempre,\nAmém."
             )
         case .mystery(let index):
             let mystery = mysterySet.mysteries[index]
@@ -292,11 +292,11 @@ enum RosaryFocusSection: Hashable {
 
     static func from(beadID: Int) -> RosaryFocusSection {
         switch beadID {
-        case 0...5:
+        case 0...4:
             .introduction
         case 6:
             .finale
-        case 7...16:
+        case 5, 7...16:
             .mystery(0)
         case 17...27:
             .mystery(1)
