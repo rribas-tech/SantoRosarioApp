@@ -9,38 +9,38 @@ struct Prayer: Hashable {
 
 enum Prayers {
     static let credo = Prayer(
-        name: String(localized: "orationes.credo.name"),
-        body: String(localized: "orationes.credo.body")
+        name: String(localized: "prayers.credo.name"),
+        body: String(localized: "prayers.credo.body")
     )
 
     static let paterNoster = Prayer(
-        name: String(localized: "orationes.paterNoster.name"),
-        body: String(localized: "orationes.paterNoster.body")
+        name: String(localized: "prayers.paterNoster.name"),
+        body: String(localized: "prayers.paterNoster.body")
     )
 
     static let aveMaria = Prayer(
-        name: String(localized: "orationes.aveMaria.name"),
-        body: String(localized: "orationes.aveMaria.body")
+        name: String(localized: "prayers.aveMaria.name"),
+        body: String(localized: "prayers.aveMaria.body")
     )
 
     static let gloriaPatri = Prayer(
-        name: String(localized: "orationes.gloriaPatri.name"),
-        body: String(localized: "orationes.gloriaPatri.body")
+        name: String(localized: "prayers.gloriaPatri.name"),
+        body: String(localized: "prayers.gloriaPatri.body")
     )
 
     static let jaculatoriaFatima = Prayer(
-        name: String(localized: "orationes.jaculatoriaFatima.name"),
-        body: String(localized: "orationes.jaculatoriaFatima.body")
+        name: String(localized: "prayers.jaculatoriaFatima.name"),
+        body: String(localized: "prayers.jaculatoriaFatima.body")
     )
 
     static let gloriaPatriEtFatima = Prayer(
-        name: String(localized: "orationes.gloriaPatriEtFatima.name"),
+        name: String(localized: "prayers.gloriaPatriEtFatima.name"),
         body: "\(gloriaPatri.body)\n\n\(jaculatoriaFatima.body)"
     )
 
     static let salveRegina = Prayer(
-        name: String(localized: "orationes.salveRegina.name"),
-        body: String(localized: "orationes.salveRegina.body")
+        name: String(localized: "prayers.salveRegina.name"),
+        body: String(localized: "prayers.salveRegina.body")
     )
 }
 
@@ -126,21 +126,21 @@ enum RosaryCatalog {
     // MARK: Shared Steps
 
     private static let introduction = RosaryStep(
-        name: String(localized: "rosarium.introductio.name"),
-        title: String(localized: "rosarium.introductio.title"),
-        scripture: String(localized: "rosarium.introductio.scripture"),
+        name: String(localized: "rosary.introduction.name"),
+        title: String(localized: "rosary.introduction.title"),
+        scripture: String(localized: "rosary.introduction.scripture"),
         beads: [
             StepBead(.crucifix, Prayers.credo),
             StepBead(.large, Prayers.paterNoster),
-            StepBead(.small, Prayers.aveMaria, title: String(localized: "rosarium.introductio.aveMaria1")),
-            StepBead(.small, Prayers.aveMaria, title: String(localized: "rosarium.introductio.aveMaria2")),
-            StepBead(.small, Prayers.aveMaria, title: String(localized: "rosarium.introductio.aveMaria3")),
+            StepBead(.small, Prayers.aveMaria, title: String(localized: "rosary.introduction.bead.aveMaria1")),
+            StepBead(.small, Prayers.aveMaria, title: String(localized: "rosary.introduction.bead.aveMaria2")),
+            StepBead(.small, Prayers.aveMaria, title: String(localized: "rosary.introduction.bead.aveMaria3")),
             StepBead(.chain, Prayers.gloriaPatri),
         ]
     )
 
     private static let finale = RosaryStep(
-        name: String(localized: "rosarium.conclusio.name"),
+        name: String(localized: "rosary.finale.name"),
         title: Prayers.salveRegina.name,
         scripture: Prayers.salveRegina.body
     )
@@ -160,145 +160,145 @@ enum RosaryCatalog {
         )
     }
 
-    // MARK: Gaudii — Monday, Saturday
+    // MARK: Joyful — Monday, Saturday
 
     static let joyful = RosaryMystery(
         weekdays: [2, 7],
-        name: String(localized: "mysteria.gaudii.name"),
+        name: String(localized: "mysteries.joyful.name"),
         steps: [
             introduction,
             decade(
-                name: String(localized: "mysteria.gaudii.primum.name"),
-                title: String(localized: "mysteria.gaudii.primum.title"),
-                scripture: String(localized: "mysteria.gaudii.primum.scripture")
+                name: String(localized: "mysteries.joyful.step1.name"),
+                title: String(localized: "mysteries.joyful.step1.title"),
+                scripture: String(localized: "mysteries.joyful.step1.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.gaudii.secundum.name"),
-                title: String(localized: "mysteria.gaudii.secundum.title"),
-                scripture: String(localized: "mysteria.gaudii.secundum.scripture")
+                name: String(localized: "mysteries.joyful.step2.name"),
+                title: String(localized: "mysteries.joyful.step2.title"),
+                scripture: String(localized: "mysteries.joyful.step2.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.gaudii.tertium.name"),
-                title: String(localized: "mysteria.gaudii.tertium.title"),
-                scripture: String(localized: "mysteria.gaudii.tertium.scripture")
+                name: String(localized: "mysteries.joyful.step3.name"),
+                title: String(localized: "mysteries.joyful.step3.title"),
+                scripture: String(localized: "mysteries.joyful.step3.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.gaudii.quartum.name"),
-                title: String(localized: "mysteria.gaudii.quartum.title"),
-                scripture: String(localized: "mysteria.gaudii.quartum.scripture")
+                name: String(localized: "mysteries.joyful.step4.name"),
+                title: String(localized: "mysteries.joyful.step4.title"),
+                scripture: String(localized: "mysteries.joyful.step4.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.gaudii.quintum.name"),
-                title: String(localized: "mysteria.gaudii.quintum.title"),
-                scripture: String(localized: "mysteria.gaudii.quintum.scripture")
+                name: String(localized: "mysteries.joyful.step5.name"),
+                title: String(localized: "mysteries.joyful.step5.title"),
+                scripture: String(localized: "mysteries.joyful.step5.scripture")
             ),
             finale,
         ]
     )
 
-    // MARK: Doloris — Tuesday, Friday
+    // MARK: Sorrowful — Tuesday, Friday
 
     static let sorrowful = RosaryMystery(
         weekdays: [3, 6],
-        name: String(localized: "mysteria.doloris.name"),
+        name: String(localized: "mysteries.sorrowful.name"),
         steps: [
             introduction,
             decade(
-                name: String(localized: "mysteria.doloris.primum.name"),
-                title: String(localized: "mysteria.doloris.primum.title"),
-                scripture: String(localized: "mysteria.doloris.primum.scripture")
+                name: String(localized: "mysteries.sorrowful.step1.name"),
+                title: String(localized: "mysteries.sorrowful.step1.title"),
+                scripture: String(localized: "mysteries.sorrowful.step1.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.doloris.secundum.name"),
-                title: String(localized: "mysteria.doloris.secundum.title"),
-                scripture: String(localized: "mysteria.doloris.secundum.scripture")
+                name: String(localized: "mysteries.sorrowful.step2.name"),
+                title: String(localized: "mysteries.sorrowful.step2.title"),
+                scripture: String(localized: "mysteries.sorrowful.step2.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.doloris.tertium.name"),
-                title: String(localized: "mysteria.doloris.tertium.title"),
-                scripture: String(localized: "mysteria.doloris.tertium.scripture")
+                name: String(localized: "mysteries.sorrowful.step3.name"),
+                title: String(localized: "mysteries.sorrowful.step3.title"),
+                scripture: String(localized: "mysteries.sorrowful.step3.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.doloris.quartum.name"),
-                title: String(localized: "mysteria.doloris.quartum.title"),
-                scripture: String(localized: "mysteria.doloris.quartum.scripture")
+                name: String(localized: "mysteries.sorrowful.step4.name"),
+                title: String(localized: "mysteries.sorrowful.step4.title"),
+                scripture: String(localized: "mysteries.sorrowful.step4.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.doloris.quintum.name"),
-                title: String(localized: "mysteria.doloris.quintum.title"),
-                scripture: String(localized: "mysteria.doloris.quintum.scripture")
+                name: String(localized: "mysteries.sorrowful.step5.name"),
+                title: String(localized: "mysteries.sorrowful.step5.title"),
+                scripture: String(localized: "mysteries.sorrowful.step5.scripture")
             ),
             finale,
         ]
     )
 
-    // MARK: Gloriae — Sunday, Wednesday
+    // MARK: Glorious — Sunday, Wednesday
 
     static let glorious = RosaryMystery(
         weekdays: [1, 4],
-        name: String(localized: "mysteria.gloriae.name"),
+        name: String(localized: "mysteries.glorious.name"),
         steps: [
             introduction,
             decade(
-                name: String(localized: "mysteria.gloriae.primum.name"),
-                title: String(localized: "mysteria.gloriae.primum.title"),
-                scripture: String(localized: "mysteria.gloriae.primum.scripture")
+                name: String(localized: "mysteries.glorious.step1.name"),
+                title: String(localized: "mysteries.glorious.step1.title"),
+                scripture: String(localized: "mysteries.glorious.step1.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.gloriae.secundum.name"),
-                title: String(localized: "mysteria.gloriae.secundum.title"),
-                scripture: String(localized: "mysteria.gloriae.secundum.scripture")
+                name: String(localized: "mysteries.glorious.step2.name"),
+                title: String(localized: "mysteries.glorious.step2.title"),
+                scripture: String(localized: "mysteries.glorious.step2.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.gloriae.tertium.name"),
-                title: String(localized: "mysteria.gloriae.tertium.title"),
-                scripture: String(localized: "mysteria.gloriae.tertium.scripture")
+                name: String(localized: "mysteries.glorious.step3.name"),
+                title: String(localized: "mysteries.glorious.step3.title"),
+                scripture: String(localized: "mysteries.glorious.step3.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.gloriae.quartum.name"),
-                title: String(localized: "mysteria.gloriae.quartum.title"),
-                scripture: String(localized: "mysteria.gloriae.quartum.scripture")
+                name: String(localized: "mysteries.glorious.step4.name"),
+                title: String(localized: "mysteries.glorious.step4.title"),
+                scripture: String(localized: "mysteries.glorious.step4.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.gloriae.quintum.name"),
-                title: String(localized: "mysteria.gloriae.quintum.title"),
-                scripture: String(localized: "mysteria.gloriae.quintum.scripture")
+                name: String(localized: "mysteries.glorious.step5.name"),
+                title: String(localized: "mysteries.glorious.step5.title"),
+                scripture: String(localized: "mysteries.glorious.step5.scripture")
             ),
             finale,
         ]
     )
 
-    // MARK: Lucis — Thursday
+    // MARK: Luminous — Thursday
 
     static let luminous = RosaryMystery(
         weekdays: [5],
-        name: String(localized: "mysteria.lucis.name"),
+        name: String(localized: "mysteries.luminous.name"),
         steps: [
             introduction,
             decade(
-                name: String(localized: "mysteria.lucis.primum.name"),
-                title: String(localized: "mysteria.lucis.primum.title"),
-                scripture: String(localized: "mysteria.lucis.primum.scripture")
+                name: String(localized: "mysteries.luminous.step1.name"),
+                title: String(localized: "mysteries.luminous.step1.title"),
+                scripture: String(localized: "mysteries.luminous.step1.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.lucis.secundum.name"),
-                title: String(localized: "mysteria.lucis.secundum.title"),
-                scripture: String(localized: "mysteria.lucis.secundum.scripture")
+                name: String(localized: "mysteries.luminous.step2.name"),
+                title: String(localized: "mysteries.luminous.step2.title"),
+                scripture: String(localized: "mysteries.luminous.step2.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.lucis.tertium.name"),
-                title: String(localized: "mysteria.lucis.tertium.title"),
-                scripture: String(localized: "mysteria.lucis.tertium.scripture")
+                name: String(localized: "mysteries.luminous.step3.name"),
+                title: String(localized: "mysteries.luminous.step3.title"),
+                scripture: String(localized: "mysteries.luminous.step3.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.lucis.quartum.name"),
-                title: String(localized: "mysteria.lucis.quartum.title"),
-                scripture: String(localized: "mysteria.lucis.quartum.scripture")
+                name: String(localized: "mysteries.luminous.step4.name"),
+                title: String(localized: "mysteries.luminous.step4.title"),
+                scripture: String(localized: "mysteries.luminous.step4.scripture")
             ),
             decade(
-                name: String(localized: "mysteria.lucis.quintum.name"),
-                title: String(localized: "mysteria.lucis.quintum.title"),
-                scripture: String(localized: "mysteria.lucis.quintum.scripture")
+                name: String(localized: "mysteries.luminous.step5.name"),
+                title: String(localized: "mysteries.luminous.step5.title"),
+                scripture: String(localized: "mysteries.luminous.step5.scripture")
             ),
             finale,
         ]

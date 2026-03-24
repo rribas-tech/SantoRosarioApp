@@ -8,7 +8,14 @@
 
     },
     "mysteries.glorious.name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mistérios Gloriosos"
+          }
+        }
+      }
     },
     "mysteries.glorious.step1.name" : {
 
