@@ -1,96 +1,44 @@
 import SwiftUI
 
 struct MysteryFocusView: View {
-    let context: RosaryFocusContext
+    let mystery: RosaryMystery
 
-    @State private var activeSection: RosaryFocusSection
-    @State private var selectedStep: FocusStep
+    @State private var stepIndex: Int
+    @State private var beadIndex: Int
     @State private var isPrayerExpanded = false
 
     init(context: RosaryFocusContext) {
-        self.context = context
-        let initialSection = context.section
-        let initialBeadID = initialSection.beadIDs.contains(context.selectedBeadID)
-            ? context.selectedBeadID
-            : initialSection.defaultBeadID
-        _activeSection = State(initialValue: context.section)
-        _selectedStep = State(initialValue: .bead(initialBeadID))
+        self.mystery = context.mystery
+        _stepIndex = State(initialValue: context.stepIndex)
+        _beadIndex = State(initialValue: context.beadIndex)
     }
 
-    private static let beadsByID = Dictionary(uniqueKeysWithValues: Bead.rosary.map { ($0.id, $0) })
     private let gold = Color(red: 1.0, green: 0.84, blue: 0.0)
 
-    private var content: FocusContent {
-        activeSection.content(for: context.mysterySet)
+    private var currentStep: RosaryStep {
+        mystery.steps[stepIndex]
     }
 
-    private var focusBeads: [Bead] {
-        activeSection.beadIDs.compactMap { Self.beadsByID[$0] }
+    private var currentBead: StepBead? {
+        let beads = currentStep.beads
+        return beads.indices.contains(beadIndex) ? beads[beadIndex] : nil
     }
 
-    private var activeSectionIndex: Int {
-        RosaryFocusSection.orderedSections.firstIndex(of: activeSection) ?? 0
-    }
-
-    private var currentSteps: [FocusStep] {
-        steps(for: activeSection)
-    }
-
-    private var currentStepIndex: Int {
-        currentSteps.firstIndex(of: selectedStep) ?? 0
-    }
-
-    private var currentFocusPrayer: FocusPrayer? {
-        let p = prayer(for: selectedStep, in: activeSection)
-        return p == .announceMystery ? nil : p
-    }
-
-    private var expandedPrayerText: String? {
-        guard let focusPrayer = currentFocusPrayer, let body = focusPrayer.prayer?.body else { return nil }
-        if focusPrayer == .gloryBe, case .mystery = activeSection {
-            return body + "\n\n" + Prayers.fatima.body
-        }
-        return body
-    }
-
-    private var currentPrayerLabel: String? {
-        guard let currentPrayer = currentFocusPrayer else { return nil }
-
-        if case .introduction = activeSection, case .bead(let id) = selectedStep,
-           let title = Prayers.introHailMaryTitles[id] {
-            return title
-        }
-
-        if currentPrayer == .gloryBe, case .mystery = activeSection {
-            return "\(Prayers.gloryBe.name) e \(Prayers.fatima.name)"
-        }
-
-        return currentPrayer.prayer?.name
-    }
-
-    private var currentSelectedBeadID: Int? {
-        if case let .bead(id) = selectedStep {
-            return id
-        }
-        return nil
-    }
-
-    private var isClosingChainSelected: Bool {
-        if case .chain = selectedStep { return true }
-        return false
+    private var isChainSelected: Bool {
+        currentBead?.icon == .chain
     }
 
     private var canMoveBackward: Bool {
-        activeSectionIndex > 0 || currentStepIndex > 0
+        stepIndex > 0 || beadIndex > 0
     }
 
     private var canMoveForward: Bool {
-        activeSectionIndex < RosaryFocusSection.orderedSections.count - 1 ||
-            currentStepIndex < currentSteps.count - 1
+        let beads = currentStep.beads
+        return stepIndex < mystery.steps.count - 1 || beadIndex < beads.count - 1
     }
 
     private var showsFooter: Bool {
-        activeSection != .finale
+        !currentStep.beads.isEmpty
     }
 
     // MARK: - Body
@@ -120,18 +68,18 @@ struct MysteryFocusView: View {
     }
 
     private var hero: some View {
-        let c = content
+        let step = currentStep
         return VStack(alignment: .leading, spacing: 16) {
-            Text(c.eyebrow)
+            Text(step.name)
                 .font(.caption.weight(.semibold))
                 .tracking(0.6)
                 .foregroundStyle(gold)
 
-            Text(c.title)
+            Text(step.title)
                 .font(.system(size: 32, weight: .bold, design: .serif))
                 .foregroundStyle(.white)
 
-            Text(c.heroText)
+            Text(step.scripture)
                 .font(.system(size: 19, weight: .regular, design: .serif))
                 .foregroundStyle(.white.opacity(0.92))
                 .lineSpacing(8)
@@ -165,17 +113,20 @@ struct MysteryFocusView: View {
         .shadow(color: .black.opacity(0.28), radius: 18, y: 12)
     }
 
+    // MARK: - Bottom Panel
+
     private var bottomPanel: some View {
         VStack(spacing: 14) {
-            mysteryStrip
+            beadStrip
             navigationControls
         }
     }
 
-    private var mysteryStrip: some View {
-        let beads = focusBeads
-        let label = currentPrayerLabel
-        let hasChain = currentSteps.contains { if case .chain = $0 { true } else { false } }
+    private var beadStrip: some View {
+        let stepBeads = currentStep.beads
+        let visualBeads = stepBeads.enumerated().filter { $0.element.icon != .chain }
+        let hasChain = stepBeads.last?.icon == .chain
+        let label = currentBead?.displayTitle
 
         return VStack(alignment: .leading, spacing: label == nil ? 0 : 14) {
             if let label {
@@ -189,7 +140,7 @@ struct MysteryFocusView: View {
                             Spacer()
                             Text(label)
                                 .font(.headline.weight(.semibold))
-                                .foregroundStyle(isClosingChainSelected ? gold : .white.opacity(0.92))
+                                .foregroundStyle(isChainSelected ? gold : .white.opacity(0.92))
                                 .multilineTextAlignment(.center)
                             Image(systemName: "chevron.up")
                                 .font(.caption2.weight(.bold))
@@ -200,8 +151,8 @@ struct MysteryFocusView: View {
                     }
                     .buttonStyle(.plain)
 
-                    if isPrayerExpanded, let fullText = expandedPrayerText {
-                        Text(fullText)
+                    if isPrayerExpanded, let body = currentBead?.prayer.body {
+                        Text(body)
                             .font(.system(size: 16, weight: .regular, design: .serif))
                             .foregroundStyle(.white.opacity(0.85))
                             .lineSpacing(6)
@@ -216,17 +167,17 @@ struct MysteryFocusView: View {
             GeometryReader { proxy in
                 let metrics = stripMetrics(
                     for: proxy.size.width,
-                    beadCount: beads.count,
+                    beadCount: visualBeads.count,
                     includesClosingChain: hasChain
                 )
 
                 HStack(spacing: 0) {
-                    ForEach(Array(beads.enumerated()), id: \.element.id) { index, bead in
-                        if index > 0 {
+                    ForEach(Array(visualBeads.enumerated()), id: \.offset) { visualIdx, item in
+                        if visualIdx > 0 {
                             connector(width: metrics.connectorWidth)
                         }
 
-                        focusBead(bead, metrics: metrics)
+                        focusBead(item.element, at: item.offset, metrics: metrics)
                             .frame(width: metrics.slotWidth, height: metrics.height)
                     }
 
@@ -236,7 +187,7 @@ struct MysteryFocusView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .frame(height: beads.count > 8 ? 48 : 62)
+            .frame(height: visualBeads.count > 8 ? 48 : 62)
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 16)
@@ -270,17 +221,17 @@ struct MysteryFocusView: View {
             .fill(
                 LinearGradient(
                     colors: [
-                        gold.opacity(isClosingChainSelected ? 1.0 : 0.7),
-                        gold.opacity(isClosingChainSelected ? 0.8 : 0.5),
+                        gold.opacity(isChainSelected ? 1.0 : 0.7),
+                        gold.opacity(isChainSelected ? 0.8 : 0.5),
                     ],
                     startPoint: .leading,
                     endPoint: .trailing
                 )
             )
-            .frame(width: width, height: isClosingChainSelected ? 3 : 2)
+            .frame(width: width, height: isChainSelected ? 3 : 2)
             .shadow(
-                color: gold.opacity(isClosingChainSelected ? 0.45 : 0),
-                radius: isClosingChainSelected ? 10 : 0
+                color: gold.opacity(isChainSelected ? 0.45 : 0),
+                radius: isChainSelected ? 10 : 0
             )
     }
 
@@ -346,77 +297,33 @@ struct MysteryFocusView: View {
 
     // MARK: - Selection
 
-    private func selectStep(_ step: FocusStep, response: CGFloat = 0.3, damping: CGFloat = 0.7) {
+    private func selectBead(_ idx: Int, response: CGFloat = 0.3, damping: CGFloat = 0.7) {
         withAnimation(.spring(response: response, dampingFraction: damping)) {
             isPrayerExpanded = false
-            selectedStep = step
+            beadIndex = idx
         }
     }
 
     private func moveSelection(by offset: Int) {
-        let targetIndex = currentStepIndex + offset
+        let targetBead = beadIndex + offset
 
-        if currentSteps.indices.contains(targetIndex) {
-            selectStep(currentSteps[targetIndex], response: 0.28, damping: 0.8)
+        if currentStep.beads.indices.contains(targetBead) {
+            selectBead(targetBead, response: 0.28, damping: 0.8)
             return
         }
 
-        let targetSectionIndex = activeSectionIndex + offset
-        guard RosaryFocusSection.orderedSections.indices.contains(targetSectionIndex) else { return }
+        let targetStep = stepIndex + offset
+        guard mystery.steps.indices.contains(targetStep) else { return }
 
-        let targetSection = RosaryFocusSection.orderedSections[targetSectionIndex]
-        let targetSteps = steps(for: targetSection)
-
+        let nextStep = mystery.steps[targetStep]
         withAnimation(.spring(response: 0.32, dampingFraction: 0.82)) {
             isPrayerExpanded = false
-            activeSection = targetSection
-            selectedStep = offset > 0
-                ? (targetSteps.first ?? .bead(targetSection.defaultBeadID))
-                : (targetSteps.last ?? .bead(targetSection.defaultBeadID))
+            stepIndex = targetStep
+            beadIndex = offset > 0 ? 0 : max(nextStep.beads.count - 1, 0)
         }
     }
 
-    private func steps(for section: RosaryFocusSection) -> [FocusStep] {
-        let beadSteps = section.beadIDs.map(FocusStep.bead)
-        switch section {
-        case .introduction, .mystery:
-            return beadSteps + [.chain(.gloryBe)]
-        case .finale:
-            return beadSteps
-        }
-    }
-
-    private func prayer(for step: FocusStep, in section: RosaryFocusSection) -> FocusPrayer {
-        switch section {
-        case .introduction:
-            switch step {
-            case .bead(let id):
-                switch id {
-                case 0: .creed
-                case 1: .ourFather
-                case 2, 3, 4: .hailMary
-                default: .announceMystery
-                }
-            case .chain(let prayer):
-                prayer
-            }
-        case .mystery:
-            switch step {
-            case .bead(let id):
-                if id == section.beadIDs.first {
-                    .ourFather
-                } else {
-                    .hailMary
-                }
-            case .chain(let prayer):
-                prayer
-            }
-        case .finale:
-            .salveRainha
-        }
-    }
-
-    // MARK: - Layout
+    // MARK: - Bead Rendering
 
     private func stripMetrics(
         for width: CGFloat,
@@ -449,10 +356,10 @@ struct MysteryFocusView: View {
     }
 
     @ViewBuilder
-    private func focusBead(_ bead: Bead, metrics: StripMetrics) -> some View {
-        let isSelected = currentSelectedBeadID == bead.id
+    private func focusBead(_ stepBead: StepBead, at idx: Int, metrics: StripMetrics) -> some View {
+        let isSelected = beadIndex == idx
 
-        if bead.kind == .crucifix {
+        if stepBead.icon == .crucifix {
             CrucifixView(
                 isSelected: isSelected,
                 sizeScale: metrics.scale,
@@ -460,18 +367,18 @@ struct MysteryFocusView: View {
                 minimumHitHeight: metrics.height,
                 selectionScale: 1.08
             ) {
-                selectStep(.bead(bead.id))
+                selectBead(idx)
             }
         } else {
             BeadView(
-                kind: bead.kind,
+                kind: stepBead.icon == .large ? .large : stepBead.icon == .medal ? .medal : .small,
                 isSelected: isSelected,
                 sizeScale: metrics.scale,
                 minimumHitWidth: metrics.slotWidth,
                 minimumHitHeight: metrics.height,
                 selectionScale: 1.12
             ) {
-                selectStep(.bead(bead.id))
+                selectBead(idx)
             }
         }
     }
@@ -496,33 +403,6 @@ struct MysteryFocusView: View {
                 startRadius: 10,
                 endRadius: 320
             )
-        }
-    }
-
-    // MARK: - Types
-
-    private enum FocusStep: Hashable {
-        case bead(Int)
-        case chain(FocusPrayer)
-    }
-
-    private enum FocusPrayer: Hashable {
-        case salveRainha
-        case announceMystery
-        case creed
-        case ourFather
-        case hailMary
-        case gloryBe
-
-        var prayer: Prayer? {
-            switch self {
-            case .creed: Prayers.creed
-            case .ourFather: Prayers.ourFather
-            case .hailMary: Prayers.hailMary
-            case .gloryBe: Prayers.gloryBe
-            case .salveRainha: Prayers.salveRainha
-            case .announceMystery: nil
-            }
         }
     }
 

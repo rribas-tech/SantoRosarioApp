@@ -5,11 +5,11 @@ import Observation
 final class RosaryState {
     let beads = Bead.rosary
     let weekdayTitle = RosaryState.makeWeekdayTitle()
-    let mysterySet = MysterySet.forDate()
+    let mystery = RosaryCatalog.forDate()
     var selectedBeadID: Int?
 
     var mysteryOfDayDescription: String {
-        "\(weekdayTitle): \(mysterySet.pluralTitle)"
+        "\(weekdayTitle): \(mystery.name)"
     }
 
     func select(_ id: Int) {
@@ -17,10 +17,11 @@ final class RosaryState {
     }
 
     func focusContext(for beadID: Int) -> RosaryFocusContext {
-        RosaryFocusContext(
-            mysterySet: mysterySet,
-            section: RosaryFocusSection.from(beadID: beadID),
-            selectedBeadID: beadID
+        let pos = RosaryCatalog.stepPosition(forPhysicalBead: beadID)
+        return RosaryFocusContext(
+            mystery: mystery,
+            stepIndex: pos.stepIndex,
+            beadIndex: pos.beadIndex
         )
     }
 
