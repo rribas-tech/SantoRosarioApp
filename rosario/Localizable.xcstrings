@@ -5,7 +5,104 @@
 
     },
     "Mistério do Dia" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mistério do Dia"
+          }
+        }
+      }
+    },
+    "mysteries.glorious.fifth.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coroação de Maria no Céu"
+          }
+        }
+      }
+    },
+    "mysteries.glorious.fifth.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Apareceu em seguida um grande sinal no céu: uma Mulher revestida do sol, a lua debaixo dos seus pés e na cabeça uma coroa de doze estrelas» (Ap 12, 1)."
+          }
+        }
+      }
+    },
+    "mysteries.glorious.fifth.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quinto Mistério Glorioso"
+          }
+        }
+      }
+    },
+    "mysteries.glorious.first.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ressurreição de Jesus"
+          }
+        }
+      }
+    },
+    "mysteries.glorious.first.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«No primeiro dia da semana, muito cedo, dirigiram-se ao sepulcro com os aromas que haviam preparado. Acharam a pedra removida longe da abertura do sepulcro. Entraram, mas não encontraram o corpo do Senhor Jesus. Não sabiam elas o que pensar, quando apareceram em frente delas dois personagens com vestes resplandecentes. Como estivessem amedrontadas e voltassem o rosto para o chão, disseram-lhes eles: \"Por que buscais entre os mortos aquele que está vivo? Não está aqui, mas ressuscitou\"» (Lc 24, 1-6). "
+          }
+        }
+      }
+    },
+    "mysteries.glorious.first.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primeiro Mistério Glorioso"
+          }
+        }
+      }
+    },
+    "mysteries.glorious.fourth.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assunção de Maria"
+          }
+        }
+      }
+    },
+    "mysteries.glorious.fourth.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Por isto, desde agora, me proclamarão bem-aventurada todas as gerações, porque realizou em mim maravilhas aquele que é poderoso e cujo nome é Santo» (Lc 1, 48-49). "
+          }
+        }
+      }
+    },
+    "mysteries.glorious.fourth.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quarto Mistério Glorioso"
+          }
+        }
+      }
     },
     "mysteries.glorious.name" : {
       "localizations" : {
@@ -17,263 +114,780 @@
         }
       }
     },
-    "mysteries.glorious.step1.name" : {
-
+    "mysteries.glorious.second.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ascensão de Jesus ao Céu"
+          }
+        }
+      }
     },
-    "mysteries.glorious.step1.scripture" : {
-
+    "mysteries.glorious.second.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Depois que o Senhor Jesus lhes falou, foi levado ao céu e está sentado à direita de Deus» (Mc 16, 19). "
+          }
+        }
+      }
     },
-    "mysteries.glorious.step1.title" : {
-
+    "mysteries.glorious.second.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segundo Mistério Glorioso"
+          }
+        }
+      }
     },
-    "mysteries.glorious.step2.name" : {
-
+    "mysteries.glorious.third.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vinda do Espírito Santo sobre os Apóstolos"
+          }
+        }
+      }
     },
-    "mysteries.glorious.step2.scripture" : {
-
+    "mysteries.glorious.third.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Chegando o dia de Pentecostes, estavam todos reunidos no mesmo lugar. De repente, veio do céu um ruído, como se soprasse um vento impetuoso, e encheu toda a casa onde estavam sentados. Apareceu-lhes então uma espécie de línguas de fogo que se repartiram e pousaram sobre cada um deles. Ficaram todos cheios do Espírito Santo e começaram a falar em línguas, conforme o Espírito Santo lhes concedia que falassem» (At 2, 1-4)."
+          }
+        }
+      }
     },
-    "mysteries.glorious.step2.title" : {
-
+    "mysteries.glorious.third.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terceiro Mistério Glorioso"
+          }
+        }
+      }
     },
-    "mysteries.glorious.step3.name" : {
-
+    "mysteries.joyful.fifth.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perda e encontro do Menino Jesus no Templo"
+          }
+        }
+      }
     },
-    "mysteries.glorious.step3.scripture" : {
-
+    "mysteries.joyful.fifth.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Seus pais iam todos os anos a Jerusalém para a festa da Páscoa. Tendo ele atingido doze anos, subiram a Jerusalém, segundo o costume da festa. Acabados os dias da festa, quando voltavam, ficou o menino Jesus em Jerusalém, sem que os seus pais o percebessem...\nTrês dias depois o acharam no templo, sentado no meio dos doutores, ouvindo-os e interrogando-os. Todos os que o ouviam estavam maravilhados da sabedoria de suas respostas» (Lc 2, 41-47)"
+          }
+        }
+      }
     },
-    "mysteries.glorious.step3.title" : {
-
+    "mysteries.joyful.fifth.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quinto Mistério Gozoso"
+          }
+        }
+      }
     },
-    "mysteries.glorious.step4.name" : {
-
+    "mysteries.joyful.first.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anunciação a Maria"
+          }
+        }
+      }
     },
-    "mysteries.glorious.step4.scripture" : {
-
+    "mysteries.joyful.first.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«No sexto mês, o anjo Gabriel foi enviado por Deus a uma cidade da Galiléia, chamada Nazaré,  a uma virgem desposada com um homem que se chamava José, da casa de Davi e o nome da virgem era Maria» (Lc 1, 26-27). "
+          }
+        }
+      }
     },
-    "mysteries.glorious.step4.title" : {
-
+    "mysteries.joyful.first.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primeiro Mistério Gozoso"
+          }
+        }
+      }
     },
-    "mysteries.glorious.step5.name" : {
-
+    "mysteries.joyful.fourth.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apresentação do Menino Jesus no Templo"
+          }
+        }
+      }
     },
-    "mysteries.glorious.step5.scripture" : {
-
+    "mysteries.joyful.fourth.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Completados que foram os oito dias para ser circuncidado o menino, foi-lhe posto o nome de Jesus, como lhe tinha chamado o anjo, antes de ser concebido no seio materno. Concluídos os dias da sua purificação segundo a Lei de Moisés, levaram-no a Jerusalém para o apresentar ao Senhor, conforme o que está escrito na lei do Senhor: Todo primogênito do sexo masculino será consagrado ao Senhor; e para oferecerem o sacrifício prescrito pela lei do Senhor, um par de rolas ou dois pombinhos.» (Lc 2, 21-24)."
+          }
+        }
+      }
     },
-    "mysteries.glorious.step5.title" : {
-
+    "mysteries.joyful.fourth.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quarto Mistério Gozoso"
+          }
+        }
+      }
     },
     "mysteries.joyful.name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mistérios  Gozosos"
+          }
+        }
+      }
     },
-    "mysteries.joyful.step1.name" : {
-
+    "mysteries.joyful.second.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visitação de Nossa Senhora a sua prima Isabel"
+          }
+        }
+      }
     },
-    "mysteries.joyful.step1.scripture" : {
-
+    "mysteries.joyful.second.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Naqueles dias, Maria se levantou e foi às pressas às montanhas, a uma cidade de Judá. Entrou em casa de Zacarias e saudou Isabel. Ora, apenas Isabel ouviu a saudação de Maria, a criança estremeceu no seu seio; e Isabel ficou cheia do Espírito Santo. E exclamou em alta voz: \"Bendita és tu entre as mulheres e bendito é o fruto do teu ventre\"» (Lc 1, 39-42)."
+          }
+        }
+      }
     },
-    "mysteries.joyful.step1.title" : {
-
+    "mysteries.joyful.second.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segundo Mistério Gozoso"
+          }
+        }
+      }
     },
-    "mysteries.joyful.step2.name" : {
-
+    "mysteries.joyful.third.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nascimento de Jesus"
+          }
+        }
+      }
     },
-    "mysteries.joyful.step2.scripture" : {
-
+    "mysteries.joyful.third.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Naqueles tempos apareceu um decreto de César Augusto, ordenando o recenseamento de toda a terra. Este recenseamento foi feito antes do governo de Quirino, na Síria.  Todos iam alistar-se, cada um na sua cidade.  \nTambém José subiu da Galiléia, da cidade de Nazaré, à Judéia, à Cidade de Davi, chamada Belém, porque era da casa e família de Davi,  para se alistar com a sua esposa Maria, que estava grávida.  Estando eles ali, completaram-se os dias dela.  \nE deu à luz seu filho primogênito, e, envolvendo-o em faixas, reclinou-o num presépio; porque não havia lugar para eles na hospedaria» (Lc 2,1-7)."
+          }
+        }
+      }
     },
-    "mysteries.joyful.step2.title" : {
-
+    "mysteries.joyful.third.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terceiro Mistério Gozoso"
+          }
+        }
+      }
     },
-    "mysteries.joyful.step3.name" : {
-
+    "mysteries.luminous.fifth.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instituição da Eucaristia"
+          }
+        }
+      }
     },
-    "mysteries.joyful.step3.scripture" : {
-
+    "mysteries.luminous.fifth.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Durante a refeição, Jesus tomou o pão, benzeu-o, partiu-o e o deu aos discípulos, dizendo: \"Tomai e comei, isto é meu corpo\"» (Mt 26, 26)."
+          }
+        }
+      }
     },
-    "mysteries.joyful.step3.title" : {
-
+    "mysteries.luminous.fifth.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quinto Mistério Luminoso"
+          }
+        }
+      }
     },
-    "mysteries.joyful.step4.name" : {
-
+    "mysteries.luminous.first.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batismo de Jesus no rio Jordão"
+          }
+        }
+      }
     },
-    "mysteries.joyful.step4.scripture" : {
-
+    "mysteries.luminous.first.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Depois que Jesus foi batizado, saiu logo da água. Eis que os céus se abriram e viu descer sobre ele, em forma de pomba, o Espírito de Deus. E do céu baixou uma voz: \"Eis meu Filho muito amado em quem ponho minha afeição\"» (Mt 3,16-17)."
+          }
+        }
+      }
     },
-    "mysteries.joyful.step4.title" : {
-
+    "mysteries.luminous.first.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primeiro Mistério Luminoso"
+          }
+        }
+      }
     },
-    "mysteries.joyful.step5.name" : {
-
+    "mysteries.luminous.fourth.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transfiguração de Jesus"
+          }
+        }
+      }
     },
-    "mysteries.joyful.step5.scripture" : {
-
+    "mysteries.luminous.fourth.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Seis dias depois, Jesus tomou consigo Pedro, Tiago e João, seu irmão, e conduziu-os à parte a uma alta montanha.Lá se transfigurou na presença deles: seu rosto brilhou como o sol, suas vestes tornaram-se resplandecentes de brancura» (Mt 17, 1-2)."
+          }
+        }
+      }
     },
-    "mysteries.joyful.step5.title" : {
-
+    "mysteries.luminous.fourth.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quarto Mistério Luminoso"
+          }
+        }
+      }
     },
     "mysteries.luminous.name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mistérios Luminosos"
+          }
+        }
+      }
     },
-    "mysteries.luminous.step1.name" : {
-
+    "mysteries.luminous.second.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto-revelação de Jesus nas Bodas de Caná"
+          }
+        }
+      }
     },
-    "mysteries.luminous.step1.scripture" : {
-
+    "mysteries.luminous.second.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Três dias depois, celebravam-se bodas em Caná da Galiléia, e achava-se ali a mãe de Jesus. Também foram convidados Jesus e os seus discípulos. Como viesse a faltar vinho, a mãe de Jesus disse-lhe: \"Eles já não têm vinho\". Respondeu-lhe Jesus: \"Mulher, isso compete a nós? Minha hora ainda não chegou\". Disse, então, sua mãe aos serventes: \"Fazei o que ele vos disser\"». (Jo 2, 1-5)"
+          }
+        }
+      }
     },
-    "mysteries.luminous.step1.title" : {
-
+    "mysteries.luminous.second.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segundo Mistério Luminoso"
+          }
+        }
+      }
     },
-    "mysteries.luminous.step2.name" : {
-
+    "mysteries.luminous.third.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anúncio do Reino de Deus"
+          }
+        }
+      }
     },
-    "mysteries.luminous.step2.scripture" : {
-
+    "mysteries.luminous.third.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Completou-se o tempo e o Reino de Deus está próximo; fazei penitência e crede no Evangelho». (Mc 1, 15)"
+          }
+        }
+      }
     },
-    "mysteries.luminous.step2.title" : {
-
+    "mysteries.luminous.third.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terceiro Mistério Luminoso"
+          }
+        }
+      }
     },
-    "mysteries.luminous.step3.name" : {
-
+    "mysteries.sorrowful.fifth.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crucifixão e morte de Jesus"
+          }
+        }
+      }
     },
-    "mysteries.luminous.step3.scripture" : {
-
+    "mysteries.sorrowful.fifth.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Chegados que foram ao lugar chamado Calvário, ali o crucificaram, como também os ladrões, um à direita e outro à esquerda. E Jesus dizia: \"Pai, perdoa-lhes; porque não sabem o que fazem\"...\nEra quase à hora sexta e em toda a terra houve trevas até a hora nona. Escureceu-se o sol e o véu do templo rasgou-se pelo meio. Jesus deu então um grande brado e disse: \"Pai, nas tuas mãos entrego o meu espírito\". E, dizendo isso, expirou» (Lc  23, 33-46)."
+          }
+        }
+      }
     },
-    "mysteries.luminous.step3.title" : {
-
+    "mysteries.sorrowful.fifth.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quinto Mistério Doloroso"
+          }
+        }
+      }
     },
-    "mysteries.luminous.step4.name" : {
-
+    "mysteries.sorrowful.first.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agonia de Jesus no Horto"
+          }
+        }
+      }
     },
-    "mysteries.luminous.step4.scripture" : {
-
+    "mysteries.sorrowful.first.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Retirou-se Jesus com eles para um lugar chamado Getsêmani e disse-lhes: \"Assentai-vos aqui, enquanto eu vou ali orar\". E, tomando consigo Pedro e os dois filhos de Zebedeu, começou a entristecer-se e a angustiar-se. Disse-lhes, então: \"Minha alma está triste até a morte. Ficai aqui e vigiai comigo\". Adiantou-se um pouco e, prostrando-se com a face por terra, assim rezou: \"Meu Pai, se é possível, afasta de mim este cálice! Todavia não se faça o que eu quero, mas sim o que tu queres\"» (Mt 26, 36-39)."
+          }
+        }
+      }
     },
-    "mysteries.luminous.step4.title" : {
-
+    "mysteries.sorrowful.first.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primeiro Mistério Doloroso"
+          }
+        }
+      }
     },
-    "mysteries.luminous.step5.name" : {
-
+    "mysteries.sorrowful.fourth.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jesus carregando a cruz no caminho do Calvário"
+          }
+        }
+      }
     },
-    "mysteries.luminous.step5.scripture" : {
-
+    "mysteries.sorrowful.fourth.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Passava por ali certo homem de Cirene, chamado Simão, que vinha do campo, pai de Alexandre e de Rufo, e obrigaram-no a que lhe levasse a cruz. Conduziram Jesus ao lugar chamado Gólgota, que quer dizer lugar do crânio» (Mc 15, 21-22)."
+          }
+        }
+      }
     },
-    "mysteries.luminous.step5.title" : {
-
+    "mysteries.sorrowful.fourth.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quarto Mistério Doloroso"
+          }
+        }
+      }
     },
     "mysteries.sorrowful.name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mistérios Dolorosos"
+          }
+        }
+      }
     },
-    "mysteries.sorrowful.step1.name" : {
-
+    "mysteries.sorrowful.second.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flagelação de Jesus"
+          }
+        }
+      }
     },
-    "mysteries.sorrowful.step1.scripture" : {
-
+    "mysteries.sorrowful.second.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Então lhes soltou Barrabás; mas a Jesus mandou açoitar, e o entregou para ser crucificado» (Mt 27,26)."
+          }
+        }
+      }
     },
-    "mysteries.sorrowful.step1.title" : {
-
+    "mysteries.sorrowful.second.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segundo Mistério Doloroso"
+          }
+        }
+      }
     },
-    "mysteries.sorrowful.step2.name" : {
-
+    "mysteries.sorrowful.third.name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coroação de Espinhos"
+          }
+        }
+      }
     },
-    "mysteries.sorrowful.step2.scripture" : {
-
+    "mysteries.sorrowful.third.scripture" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Os soldados do governador conduziram Jesus para o pretório e rodearam-no com todo o pelotão. Arrancaram-lhe as vestes e colocaram-lhe um manto escarlate. Depois, trançaram uma coroa de espinhos, meteram-lha na cabeça e puseram-lhe na mão uma vara. Dobrando os joelhos diante dele, diziam com escárnio: \"Salve, rei dos judeus!\"» (Mt 27, 27-29)."
+          }
+        }
+      }
     },
-    "mysteries.sorrowful.step2.title" : {
-
-    },
-    "mysteries.sorrowful.step3.name" : {
-
-    },
-    "mysteries.sorrowful.step3.scripture" : {
-
-    },
-    "mysteries.sorrowful.step3.title" : {
-
-    },
-    "mysteries.sorrowful.step4.name" : {
-
-    },
-    "mysteries.sorrowful.step4.scripture" : {
-
-    },
-    "mysteries.sorrowful.step4.title" : {
-
-    },
-    "mysteries.sorrowful.step5.name" : {
-
-    },
-    "mysteries.sorrowful.step5.scripture" : {
-
-    },
-    "mysteries.sorrowful.step5.title" : {
-
+    "mysteries.sorrowful.third.title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terceiro Mistério Doloroso"
+          }
+        }
+      }
     },
     "navigation.next" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximo"
+          }
+        }
+      }
     },
     "navigation.previous" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anterior"
+          }
+        }
+      }
     },
     "prayers.aveMaria.body" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ave Maria,  cheia de graça, o Senhor é convosco. Bendita sois Vós entre as mulheres, bendito é o fruto de Vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém."
+          }
+        }
+      }
     },
     "prayers.aveMaria.name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ave Maria"
+          }
+        }
+      }
     },
     "prayers.credo.body" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "I believe in God the Father almighty,\nCreator of heaven and earth.\nAnd in Jesus Christ, His only Son,\nour Lord, Who was conceived by the Holy Spirit,\nborn of the Virgin Mary,\nsuffered under Pontius Pilate,\nwas crucified, died, and was buried.\nHe descended into hell; the third day\nHe rose again from the dead;\nHe ascended into heaven, and sits at\nthe right hand of God the Father\nalmighty, from thence He shall come\nto judge the living and the dead.\nI believe in the Holy Spirit,\nthe holy Catholic Church,\nthe communion of saints,\nthe forgiveness of sins,\nthe resurrection of the body\nand life everlasting.\nAmen."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creio em Deus, Pai todo-poderoso, Criador do Céu e da Terra\n\nE em Jesus Cristo, seu único Filho, nosso Senhor\nque foi concebido pelo poder do Espírito Santo;\nnasceu da Virgem Maria;\npadeceu sob Pôncio Pilatos,\nfoi crucificado, morto e sepultado;\ndesceu à mansão dos mortos;\nressuscitou ao terceiro dia;\nsubiu aos Céus;\nestá sentado à direita de Deus Pai todo-poderoso,\nde onde há-de vir a julgar os vivos e os mortos.\n\nCreio no Espírito Santo;\nna santa Igreja Católica;\nna comunhão dos Santos;\nna remissão dos pecados;\nna ressurreição da carne;\ne na vida eterna. Amém."
+          }
+        }
+      }
     },
     "prayers.credo.name" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Apostles’ Creed"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Credo (Símbolo dos Apóstolos)"
+          }
+        }
+      }
     },
     "prayers.gloriaPatri.body" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glória ao Pai, ao Filho e ao Espírito Santo, como era no princípio, agora e sempre. Amém."
+          }
+        }
+      }
     },
     "prayers.gloriaPatri.name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glória ao Pai"
+          }
+        }
+      }
     },
     "prayers.gloriaPatriEtFatima.name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glória ao Pai e Jaculatória de Fátima"
+          }
+        }
+      }
     },
     "prayers.jaculatoriaFatima.body" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Óh! Meu Jesus, perdoai-nos, livrai-nos do fogo do inferno, vai as almas todas para o Céu e socorrei principalmente as que mais precisarem."
+          }
+        }
+      }
     },
     "prayers.jaculatoriaFatima.name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jaculatória de Fátima"
+          }
+        }
+      }
     },
     "prayers.paterNoster.body" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pai Nosso, que estais no céu, santificado seja o Vosso Nome, venha a nós o Vosso Reino, seja feita a Vossa Vontade, assim na terra como no céu. O pão nosso de cada dia nos dai hoje, perdoai-nos as nossas ofensas, assim como nós perdoamos a quem nos tenha ofendido. E não nos deixeis cair em tentação, mas livrai-nos do mal. Amém."
+          }
+        }
+      }
     },
     "prayers.paterNoster.name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pai Nosso"
+          }
+        }
+      }
     },
     "prayers.salveRegina.body" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salve Rainha, Mãe de Misericórdia, vida, doçura e esperança nossa, salve! A Vós bradamos, os degredados filhos de Eva. A Vós suspiramos, gemendo e chorando neste vale de lágrimas.\nEia, pois, Advogada nossa, esses Vossos olhos misericordiosos a nós volvei, e, depois deste desterro, mostrai-nos a Jesus, bendito fruto de Vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria.\nRogai por nós, santa Mãe de Deus,\nPara que sejamos dignos das promessas de Cristo.\nAmém. "
+          }
+        }
+      }
     },
     "prayers.salveRegina.name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salve Rainha"
+          }
+        }
+      }
     },
     "rosary.finale.name" : {
 
     },
     "rosary.introduction.bead.aveMaria1" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ave Maria, Filha Bem Amada do Padre Eterno"
+          }
+        }
+      }
     },
     "rosary.introduction.bead.aveMaria2" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ave Maria, Mãe Admirável de Deus Filho"
+          }
+        }
+      }
     },
     "rosary.introduction.bead.aveMaria3" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ave Maria, Esposa Fidelíssima do Divino Espírito Santo"
+          }
+        }
+      }
     },
     "rosary.introduction.name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Em nome do Pai, do Filho e do Espírito Santo. "
+          }
+        }
+      }
     },
     "rosary.introduction.scripture" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Ó Deus, vinde em nosso auxílio; Senhor, socorrei-nos e salvai-nos» (Salmo 69/70)"
+          }
+        }
+      }
     },
     "rosary.introduction.title" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INTRODUÇÃO"
+          }
+        }
+      }
     },
     "Santo Rosário" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Santo Rosário"
+          }
+        }
+      }
     }
   },
   "version" : "1.1"

@@ -168,29 +168,29 @@ enum RosaryCatalog {
         steps: [
             introduction,
             decade(
-                name: String(localized: "mysteries.joyful.step1.name"),
-                title: String(localized: "mysteries.joyful.step1.title"),
-                scripture: String(localized: "mysteries.joyful.step1.scripture")
+                name: String(localized: "mysteries.joyful.first.name"),
+                title: String(localized: "mysteries.joyful.first.title"),
+                scripture: String(localized: "mysteries.joyful.first.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.joyful.step2.name"),
-                title: String(localized: "mysteries.joyful.step2.title"),
-                scripture: String(localized: "mysteries.joyful.step2.scripture")
+                name: String(localized: "mysteries.joyful.second.name"),
+                title: String(localized: "mysteries.joyful.second.title"),
+                scripture: String(localized: "mysteries.joyful.second.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.joyful.step3.name"),
-                title: String(localized: "mysteries.joyful.step3.title"),
-                scripture: String(localized: "mysteries.joyful.step3.scripture")
+                name: String(localized: "mysteries.joyful.third.name"),
+                title: String(localized: "mysteries.joyful.third.title"),
+                scripture: String(localized: "mysteries.joyful.third.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.joyful.step4.name"),
-                title: String(localized: "mysteries.joyful.step4.title"),
-                scripture: String(localized: "mysteries.joyful.step4.scripture")
+                name: String(localized: "mysteries.joyful.fourth.name"),
+                title: String(localized: "mysteries.joyful.fourth.title"),
+                scripture: String(localized: "mysteries.joyful.fourth.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.joyful.step5.name"),
-                title: String(localized: "mysteries.joyful.step5.title"),
-                scripture: String(localized: "mysteries.joyful.step5.scripture")
+                name: String(localized: "mysteries.joyful.fifth.name"),
+                title: String(localized: "mysteries.joyful.fifth.title"),
+                scripture: String(localized: "mysteries.joyful.fifth.scripture")
             ),
             finale,
         ]
@@ -204,29 +204,29 @@ enum RosaryCatalog {
         steps: [
             introduction,
             decade(
-                name: String(localized: "mysteries.sorrowful.step1.name"),
-                title: String(localized: "mysteries.sorrowful.step1.title"),
-                scripture: String(localized: "mysteries.sorrowful.step1.scripture")
+                name: String(localized: "mysteries.sorrowful.first.name"),
+                title: String(localized: "mysteries.sorrowful.first.title"),
+                scripture: String(localized: "mysteries.sorrowful.first.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.sorrowful.step2.name"),
-                title: String(localized: "mysteries.sorrowful.step2.title"),
-                scripture: String(localized: "mysteries.sorrowful.step2.scripture")
+                name: String(localized: "mysteries.sorrowful.second.name"),
+                title: String(localized: "mysteries.sorrowful.second.title"),
+                scripture: String(localized: "mysteries.sorrowful.second.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.sorrowful.step3.name"),
-                title: String(localized: "mysteries.sorrowful.step3.title"),
-                scripture: String(localized: "mysteries.sorrowful.step3.scripture")
+                name: String(localized: "mysteries.sorrowful.third.name"),
+                title: String(localized: "mysteries.sorrowful.third.title"),
+                scripture: String(localized: "mysteries.sorrowful.third.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.sorrowful.step4.name"),
-                title: String(localized: "mysteries.sorrowful.step4.title"),
-                scripture: String(localized: "mysteries.sorrowful.step4.scripture")
+                name: String(localized: "mysteries.sorrowful.fourth.name"),
+                title: String(localized: "mysteries.sorrowful.fourth.title"),
+                scripture: String(localized: "mysteries.sorrowful.fourth.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.sorrowful.step5.name"),
-                title: String(localized: "mysteries.sorrowful.step5.title"),
-                scripture: String(localized: "mysteries.sorrowful.step5.scripture")
+                name: String(localized: "mysteries.sorrowful.fifth.name"),
+                title: String(localized: "mysteries.sorrowful.fifth.title"),
+                scripture: String(localized: "mysteries.sorrowful.fifth.scripture")
             ),
             finale,
         ]
@@ -240,29 +240,29 @@ enum RosaryCatalog {
         steps: [
             introduction,
             decade(
-                name: String(localized: "mysteries.glorious.step1.name"),
-                title: String(localized: "mysteries.glorious.step1.title"),
-                scripture: String(localized: "mysteries.glorious.step1.scripture")
+                name: String(localized: "mysteries.glorious.first.name"),
+                title: String(localized: "mysteries.glorious.first.title"),
+                scripture: String(localized: "mysteries.glorious.first.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.glorious.step2.name"),
-                title: String(localized: "mysteries.glorious.step2.title"),
-                scripture: String(localized: "mysteries.glorious.step2.scripture")
+                name: String(localized: "mysteries.glorious.second.name"),
+                title: String(localized: "mysteries.glorious.second.title"),
+                scripture: String(localized: "mysteries.glorious.second.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.glorious.step3.name"),
-                title: String(localized: "mysteries.glorious.step3.title"),
-                scripture: String(localized: "mysteries.glorious.step3.scripture")
+                name: String(localized: "mysteries.glorious.third.name"),
+                title: String(localized: "mysteries.glorious.third.title"),
+                scripture: String(localized: "mysteries.glorious.third.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.glorious.step4.name"),
-                title: String(localized: "mysteries.glorious.step4.title"),
-                scripture: String(localized: "mysteries.glorious.step4.scripture")
+                name: String(localized: "mysteries.glorious.fourth.name"),
+                title: String(localized: "mysteries.glorious.fourth.title"),
+                scripture: String(localized: "mysteries.glorious.fourth.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.glorious.step5.name"),
-                title: String(localized: "mysteries.glorious.step5.title"),
-                scripture: String(localized: "mysteries.glorious.step5.scripture")
+                name: String(localized: "mysteries.glorious.fifth.name"),
+                title: String(localized: "mysteries.glorious.fifth.title"),
+                scripture: String(localized: "mysteries.glorious.fifth.scripture")
             ),
             finale,
         ]
@@ -276,29 +276,29 @@ enum RosaryCatalog {
         steps: [
             introduction,
             decade(
-                name: String(localized: "mysteries.luminous.step1.name"),
-                title: String(localized: "mysteries.luminous.step1.title"),
-                scripture: String(localized: "mysteries.luminous.step1.scripture")
+                name: String(localized: "mysteries.luminous.first.name"),
+                title: String(localized: "mysteries.luminous.first.title"),
+                scripture: String(localized: "mysteries.luminous.first.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.luminous.step2.name"),
-                title: String(localized: "mysteries.luminous.step2.title"),
-                scripture: String(localized: "mysteries.luminous.step2.scripture")
+                name: String(localized: "mysteries.luminous.second.name"),
+                title: String(localized: "mysteries.luminous.second.title"),
+                scripture: String(localized: "mysteries.luminous.second.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.luminous.step3.name"),
-                title: String(localized: "mysteries.luminous.step3.title"),
-                scripture: String(localized: "mysteries.luminous.step3.scripture")
+                name: String(localized: "mysteries.luminous.third.name"),
+                title: String(localized: "mysteries.luminous.third.title"),
+                scripture: String(localized: "mysteries.luminous.third.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.luminous.step4.name"),
-                title: String(localized: "mysteries.luminous.step4.title"),
-                scripture: String(localized: "mysteries.luminous.step4.scripture")
+                name: String(localized: "mysteries.luminous.fourth.name"),
+                title: String(localized: "mysteries.luminous.fourth.title"),
+                scripture: String(localized: "mysteries.luminous.fourth.scripture")
             ),
             decade(
-                name: String(localized: "mysteries.luminous.step5.name"),
-                title: String(localized: "mysteries.luminous.step5.title"),
-                scripture: String(localized: "mysteries.luminous.step5.scripture")
+                name: String(localized: "mysteries.luminous.fifth.name"),
+                title: String(localized: "mysteries.luminous.fifth.title"),
+                scripture: String(localized: "mysteries.luminous.fifth.scripture")
             ),
             finale,
         ]
