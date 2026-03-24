@@ -8,11 +8,8 @@ Como recitar o Rosário
     Amém.
 
 Anuncia-se a cada dezena o "mistério", por exemplo, no primeiro mistério: "Anunciação a Maria".
-
 Depois de uma breve pausa de reflexão, recitam-se: um Pai Nosso, dez Ave Marias e um Glória ao Pai.
-
 A cada dezena da Coroa pode-se acrescentar uma invocação.
-
 No final do Rosário são recitadas as Ladainhas Lauretanas, ou outras orações marianas. 
 
  
@@ -26,37 +23,10 @@ Glória ao Pai, ao Filho e ao Espírito Santo, como era no princípio, agora e s
 Ladainha de Nossa Senhora
 
 Salve Rainha, Mãe de Misericórdia, vida, doçura e esperança nossa, salve! A Vós bradamos, os degredados filhos de Eva. A Vós suspiramos, gemendo e chorando neste vale de lágrimas.
-Eia, pois, Advogada nossa, esses Vossos olhos misericordiosos a nós volvei, e, depois deste desterro, mostrai-nos a Jesus, bendito fruto de Vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria.
+Eia, pois, Advogada nossa, esses Vossos olhos misericordiosos a nós volvei, e, depois deste desterro, mostrai-nos Jesus, bendito fruto de Vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria.
 Rogai por nós, santa Mãe de Deus,
 Para que sejamos dignos das promessas de Cristo.
 Amém. 
 
 
-Resumo
-1. Início
-Segura a cruz
-Faz o Sinal da Cruz
-Reza o Credo
-2. Primeiras contas
-1 conta grande → Pai-Nosso
-3 contas pequenas → 3 Ave-Marias
-Conta seguinte → Glória ao Pai
-3. Mistérios (núcleo do rosário)
-
-O rosário é dividido em 5 mistérios por dia.
-Cada mistério representa um momento da vida de Cristo.
-
-Para cada mistério:
-
-Anuncia o mistério
-Reza 1 Pai-Nosso (conta grande)
-Reza 10 Ave-Marias (contas pequenas)
-Reza o Glória ao Pai
-(Opcional) Jaculatória de Fátima
-
-Repete isso nas 5 dezenas.
-
-4. Final
-Reza a Salve Rainha
-Orações finais
-Faz o Sinal da Cruz
+Referência: https://www.vatican.va/special/rosary/documents/misteri_po.html

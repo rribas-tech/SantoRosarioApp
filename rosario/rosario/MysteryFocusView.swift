@@ -238,7 +238,7 @@ struct MysteryFocusView: View {
     private var navigationControls: some View {
         HStack(spacing: 12) {
             navigationButton(
-                title: String(localized: "Anterior"),
+                title: String(localized: "navigation.previous", defaultValue: "Anterior"),
                 systemImage: "chevron.left",
                 isEnabled: canMoveBackward
             ) {
@@ -246,7 +246,7 @@ struct MysteryFocusView: View {
             }
 
             navigationButton(
-                title: String(localized: "Próxima"),
+                title: String(localized: "navigation.next", defaultValue: "Próxima"),
                 systemImage: "chevron.right",
                 isEnabled: canMoveForward,
                 iconOnTrailingEdge: true
