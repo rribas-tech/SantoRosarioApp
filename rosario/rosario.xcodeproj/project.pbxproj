@@ -92,7 +92,7 @@
 				};
 			};
 			buildConfigurationList = 741864BE2F6E430200575BDA /* Build configuration list for PBXProject "rosario" */;
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
