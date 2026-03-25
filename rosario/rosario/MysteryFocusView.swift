@@ -70,12 +70,12 @@ struct MysteryFocusView: View {
     private var hero: some View {
         let step = currentStep
         return VStack(alignment: .leading, spacing: 16) {
-            Text(step.name)
+            Text(step.title)
                 .font(.caption.weight(.semibold))
                 .tracking(0.6)
                 .foregroundStyle(gold)
 
-            Text(step.title)
+            Text(step.name)
                 .font(.system(size: 32, weight: .bold, design: .serif))
                 .foregroundStyle(.white)
 
