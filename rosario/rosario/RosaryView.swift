@@ -5,7 +5,6 @@ struct RosaryView: View {
     @State private var path: [RosaryFocusContext] = []
     @State private var isSettingsPresented = false
 
-    private let navigationBarColor = Color(red: 0.10, green: 0.08, blue: 0.09)
     private let gold = Color(red: 1.0, green: 0.84, blue: 0.0)
 
     var body: some View {
@@ -65,8 +64,7 @@ struct RosaryView: View {
             .sheet(isPresented: $isSettingsPresented) {
                 SettingsView()
             }
-            .toolbarBackground(navigationBarColor, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(.hidden, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .safeAreaInset(edge: .bottom) {
                 mysteryOfDayCard
