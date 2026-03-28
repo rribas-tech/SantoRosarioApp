@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct RosaryView: View {
+    @AppStorage("appLanguage") private var appLanguage = ""
+    @AppStorage("prayerLanguage") private var prayerLanguage = ""
     @State private var state = RosaryState()
     @State private var path: [RosaryFocusContext] = []
     @State private var isSettingsPresented = false
@@ -75,6 +77,8 @@ struct RosaryView: View {
                 MysteryFocusView(context: context)
             }
         }
+        .onChange(of: appLanguage) { reloadState() }
+        .onChange(of: prayerLanguage) { reloadState() }
     }
 
     private var mysteryOfDayCard: some View {
@@ -109,6 +113,11 @@ struct RosaryView: View {
         }
 
         path = [state.focusContext(for: beadID)]
+    }
+
+    private func reloadState() {
+        path = []
+        state = RosaryState()
     }
 }
 

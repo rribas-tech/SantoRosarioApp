@@ -26,9 +26,11 @@ final class RosaryState {
     }
 
     private static func makeWeekdayTitle(date: Date = .now) -> String {
+        let code = UserDefaults.standard.string(forKey: "appLanguage") ?? ""
+        let locale = code.isEmpty ? Locale.current : Locale(identifier: code)
         let formatter = DateFormatter()
-        formatter.locale = .current
+        formatter.locale = locale
         formatter.dateFormat = "EEEE"
-        return formatter.string(from: date).capitalized(with: formatter.locale)
+        return formatter.string(from: date).capitalized(with: locale)
     }
 }

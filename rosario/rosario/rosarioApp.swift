@@ -7,7 +7,6 @@ struct RosarioApp: App {
     var body: some Scene {
         WindowGroup {
             RosaryView()
-                .id(appLanguage)
                 .preferredColorScheme(.dark)
                 .environment(\.locale, locale)
         }

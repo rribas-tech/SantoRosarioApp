@@ -98,6 +98,7 @@
 				en,
 				Base,
 				"pt-BR",
+				it,
 			);
 			mainGroup = 741864BA2F6E430200575BDA;
 			minimizedProjectReferenceProxies = 1;

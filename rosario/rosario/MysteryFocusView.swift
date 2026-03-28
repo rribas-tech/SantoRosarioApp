@@ -238,7 +238,7 @@ struct MysteryFocusView: View {
     private var navigationControls: some View {
         HStack(spacing: 12) {
             navigationButton(
-                title: String(localized: "navigation.previous"),
+                title: LocalizedBundle.string("navigation.previous", locale: RosaryCatalog.appLocale),
                 systemImage: "chevron.left",
                 isEnabled: canMoveBackward
             ) {
@@ -246,7 +246,7 @@ struct MysteryFocusView: View {
             }
 
             navigationButton(
-                title: String(localized: "navigation.next"),
+                title: LocalizedBundle.string("navigation.next", locale: RosaryCatalog.appLocale),
                 systemImage: "chevron.right",
                 isEnabled: canMoveForward,
                 iconOnTrailingEdge: true
