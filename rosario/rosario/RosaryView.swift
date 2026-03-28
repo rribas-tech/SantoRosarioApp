@@ -3,6 +3,7 @@ import SwiftUI
 struct RosaryView: View {
     @State private var state = RosaryState()
     @State private var path: [RosaryFocusContext] = []
+    @State private var isSettingsPresented = false
 
     private let navigationBarColor = Color(red: 0.10, green: 0.08, blue: 0.09)
     private let gold = Color(red: 1.0, green: 0.84, blue: 0.0)
@@ -52,6 +53,17 @@ struct RosaryView: View {
                         .font(.system(size: 25, weight: .bold, design: .serif))
                         .foregroundStyle(.white)
                 }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        isSettingsPresented = true
+                    } label: {
+                        Image(systemName: "gearshape")
+                            .foregroundStyle(.white.opacity(0.8))
+                    }
+                }
+            }
+            .sheet(isPresented: $isSettingsPresented) {
+                SettingsView()
             }
             .toolbarBackground(navigationBarColor, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)

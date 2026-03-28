@@ -11,7 +11,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		741864C32F6E430200575BDA /* rosario.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rosario.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		741864C32F6E430200575BDA /* Devoto de Nossa Senhora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Devoto de Nossa Senhora.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A933742F7213C10013FAAB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,7 +46,7 @@
 		741864C42F6E430200575BDA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				741864C32F6E430200575BDA /* rosario.app */,
+				741864C32F6E430200575BDA /* Devoto de Nossa Senhora.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,9 +54,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		741864C22F6E430200575BDA /* rosario */ = {
+		741864C22F6E430200575BDA /* Devoto de Nossa Senhora */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 741864CE2F6E430300575BDA /* Build configuration list for PBXNativeTarget "rosario" */;
+			buildConfigurationList = 741864CE2F6E430300575BDA /* Build configuration list for PBXNativeTarget "Devoto de Nossa Senhora" */;
 			buildPhases = (
 				741864BF2F6E430200575BDA /* Sources */,
 				741864C02F6E430200575BDA /* Frameworks */,
@@ -69,11 +69,11 @@
 			fileSystemSynchronizedGroups = (
 				741864C52F6E430200575BDA /* rosario */,
 			);
-			name = rosario;
+			name = "Devoto de Nossa Senhora";
 			packageProductDependencies = (
 			);
 			productName = rosario;
-			productReference = 741864C32F6E430200575BDA /* rosario.app */;
+			productReference = 741864C32F6E430200575BDA /* Devoto de Nossa Senhora.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -106,7 +106,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				741864C22F6E430200575BDA /* rosario */,
+				741864C22F6E430200575BDA /* Devoto de Nossa Senhora */,
 			);
 		};
 /* End PBXProject section */
@@ -268,6 +268,7 @@
 				DEVELOPMENT_TEAM = 26654WF3FG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Devoto de Nossa Senhora";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -281,6 +282,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rennanribas.rosario;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -300,6 +305,7 @@
 				DEVELOPMENT_TEAM = 26654WF3FG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Devoto de Nossa Senhora";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -313,6 +319,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rennanribas.rosario;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -334,7 +344,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		741864CE2F6E430300575BDA /* Build configuration list for PBXNativeTarget "rosario" */ = {
+		741864CE2F6E430300575BDA /* Build configuration list for PBXNativeTarget "Devoto de Nossa Senhora" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				741864CF2F6E430300575BDA /* Debug */,
